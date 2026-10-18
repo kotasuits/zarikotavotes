@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote for Doriawala Mujayyan | Exquisite Zari Kota Saree</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              950: '#1A0206',
+              900: '#230409',
+              800: '#3D0711',
+              700: '#5A0D1B',
+              600: '#751325',
+              500: '#911B30',
+            },
+            gold: {
+              100: '#FFF7D6',
+              200: '#FDEAA8',
+              300: '#F7D974',
+              400: '#ECC044',
+              500: '#D4AF37', // Royal Gold
+              600: '#B8860B',
+              700: '#946606',
+            },
+            ivory: {
+              DEFAULT: '#FFFFFF',
+              soft: '#F8F6F0',
+              card: '#FFFFFF',
+            }
+          },
+          fontFamily: {
+            royal: ['Cinzel', 'serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            'gold-glow': '0 0 25px rgba(212, 175, 55, 0.45)',
+            'gold-glow-lg': '0 0 45px rgba(212, 175, 55, 0.65)',
+            'royal': '0 20px 40px -15px rgba(45, 6, 12, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-maroon-radial {
+      background: radial-gradient(circle at 50% 20%, #681020 0%, #3B060F 60%, #1F0207 100%);
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FDEAA8 0%, #D4AF37 50%, #E8B923 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pattern-overlay {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer-btn {
+      background: linear-gradient(90deg, #D4AF37 0%, #FFF4C2 50%, #D4AF37 100%);
+      background-size: 200% auto;
+      animation: shimmer 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-ivory text-gray-800 font-sans antialiased selection:bg-gold-500 selection:text-maroon-900">
+
+  <!-- ================= TOP LUXURY BANNER ================= -->
+  <div class="bg-maroon-900 text-gold-300 text-xs sm:text-sm py-2 px-4 text-center tracking-widest uppercase font-royal border-b border-gold-600/30 flex items-center justify-center gap-2">
+    <span>✦</span>
+    <span>Authentic Kota Heritage • National Artisan Recognition Award</span>
+    <span>✦</span>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-maroon-900/95 backdrop-blur-md border-b border-gold-500/20 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-full border border-gold-400 p-0.5 flex items-center justify-center bg-black group-hover:scale-105 transition-transform overflow-hidden shadow-gold-glow">
+          <img src="logo.jpg" alt="Doriawala Logo" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="text-left">
+          <span class="block font-royal font-bold text-lg sm:text-xl text-gold-gradient tracking-wider">DORIAWALA MUJAYYAN</span>
+          <span class="block text-[11px] text-gold-200/80 uppercase tracking-widest font-sans font-light">Master of Zari Kota Saree</span>
+        </div>
+      </a>
+
+      <button onclick="openVoteModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-maroon-900 font-royal font-bold px-6 py-2.5 rounded-full shadow-gold-glow hover:shadow-gold-glow-lg transition-all duration-300 text-sm tracking-wide transform hover:-translate-y-0.5">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        Vote Now
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative bg-maroon-radial text-white overflow-hidden py-20 lg:py-28 pattern-overlay border-b-4 border-gold-500">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-maroon-800/80 border border-gold-500/40 text-gold-300 text-xs sm:text-sm font-royal tracking-widest uppercase mb-6 backdrop-blur-sm shadow-md">
+        <span>⚜</span> Official Poll • @doriawala_mujayyan <span>⚜</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-royal font-extrabold text-white tracking-wide leading-tight mb-4 drop-shadow-lg">
+        We Are Voting For <br/>
+        <span class="text-gold-gradient drop-shadow-[0_2px_15px_rgba(212,175,55,0.4)]">Doriawala Mujayyan</span>
+      </h1>
+
+      <p class="text-xl sm:text-2xl lg:text-3xl font-serif italic text-gold-200/95 mb-6 max-w-3xl mx-auto font-light">
+        “Cast your vote for the finest handcrafted Zari Kota Saree heritage”
+      </p>
+
+      <p class="text-sm sm:text-base text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-sans font-normal">
+        Doriawala Mujayyan represents four generations of master artisan weaving, preserving the rare sheer texture and intricate pure gold zari weaves of authentic Kota Doria. Let your voice honor true Indian craftsmanship.
+      </p>
+
+      <!-- Central Golden Vote Button -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <button onclick="openVoteModal()" class="shimmer-btn text-maroon-900 font-royal font-extrabold text-lg sm:text-xl px-12 py-5 rounded-full shadow-gold-glow-lg hover:shadow-gold-glow transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-3 border-2 border-gold-200 cursor-pointer">
+          <svg class="w-6 h-6 text-maroon-900 fill-current animate-pulse" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          VOTE NOW FOR HIM
+        </button>
+      </div>
+
+      <!-- Quick Trust Indicators -->
+      <div class="mt-12 pt-8 border-t border-gold-500/20 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-gold-100 text-xs sm:text-sm">
+        <div class="flex flex-col items-center">
+          <span class="text-2xl font-royal font-bold text-gold-400">100%</span>
+          <span>Authentic Handloom</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span class="text-2xl font-royal font-bold text-gold-400">Pure Gold</span>
+          <span>Tested Zari Threads</span>
+        </div>
+        <div class="col-span-2 sm:col-span-1 flex flex-col items-center">
+          <span class="text-2xl font-royal font-bold text-gold-400">Instant</span>
+          <span>Live Vote Recording</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-gold-600 font-royal font-semibold tracking-widest text-xs uppercase">Why We Stand Together</span>
+      <h2 class="text-3xl sm:text-4xl font-royal font-bold text-maroon-800 mt-2 mb-4">
+        The Timeless Art of Zari Kota
+      </h2>
+      <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto mb-6"></div>
+      <p class="text-gray-700 font-serif text-lg leading-relaxed">
+        Kota Doria is celebrated for its distinctive square-checked pattern called <span class="text-maroon-800 font-semibold italic">‘khat’</span>. When enriched with genuine zari metallic threads, it transforms into an ethereal drape of royalty, lightweight grace, and enduring luxury.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-8 border border-gold-500/30 shadow-royal hover:-translate-y-1.5 transition-all duration-300">
+        <div class="w-14 h-14 rounded-full bg-maroon-700/10 border border-gold-500/40 flex items-center justify-center text-maroon-700 mb-6 text-2xl">
+          🧶
+        </div>
+        <h3 class="text-xl font-royal font-bold text-maroon-800 mb-3">Authentic 'Khat' Weave</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Woven on traditional pit-looms by artisan families using gossamer-fine cotton and silk yarns for unmatched lightness.
+        </p>
+      </div>
+
+      <!-- Card 2 (Featured) -->
+      <div class="bg-gradient-to-b from-maroon-900 to-maroon-800 text-white rounded-2xl p-8 border-2 border-gold-400 shadow-gold-glow hover:-translate-y-1.5 transition-all duration-300 relative">
+        <div class="absolute -top-3 right-6 bg-gold-400 text-maroon-900 text-[10px] uppercase tracking-widest font-royal font-bold py-1 px-3 rounded-full shadow">
+          Artisan Choice
+        </div>
+        <div class="w-14 h-14 rounded-full bg-gold-400/20 border border-gold-400 flex items-center justify-center text-gold-300 mb-6 text-2xl">
+          👑
+        </div>
+        <h3 class="text-xl font-royal font-bold text-gold-gradient mb-3">Doriawala Mujayyan</h3>
+        <p class="text-gray-200 text-sm leading-relaxed">
+          Championing fair artisan wages, heritage preservation, and museum-grade zari motifs that represent Indian haute couture globally.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-8 border border-gold-500/30 shadow-royal hover:-translate-y-1.5 transition-all duration-300">
+        <div class="w-14 h-14 rounded-full bg-maroon-700/10 border border-gold-500/40 flex items-center justify-center text-maroon-700 mb-6 text-2xl">
+          ✨
+        </div>
+        <h3 class="text-xl font-royal font-bold text-maroon-800 mb-3">Pure Zari Detailing</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Every pallu and border is hand-embellished with intricate real zari paisleys, temple motifs, and flora that shimmer delicately.
+        </p>
+      </div>
+    </div>
+
+    <!-- ================= INSTAGRAM VIDEOS & REELS SHOWCASE ================= -->
+    <div class="mt-20 pt-10 border-t border-gold-500/30">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-maroon-800 text-gold-300 font-royal font-semibold tracking-widest text-xs uppercase border border-gold-500/40 shadow-sm mb-3">
+          Witness The Craft
+        </span>
+        <h2 class="text-3xl sm:text-5xl font-royal font-bold text-maroon-900 mb-3">
+          Heritage in Motion
+        </h2>
+        <p class="text-gray-700 text-base sm:text-lg">
+          Watch master artisan weaves, pure zari detailing, and authentic handlooms directly from <a href="https://www.instagram.com/doriawala_mujayyan/" target="_blank" class="text-maroon-700 font-bold hover:underline">@doriawala_mujayyan</a>
+        </p>
+      </div>
+
+      <!-- 3 Videos Responsive Grid -->
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Video 1 -->
+        <div class="bg-white rounded-2xl border border-gold-500/30 shadow-royal overflow-hidden flex flex-col">
+          <div class="w-full bg-gray-50 flex items-center justify-center" style="min-height: 480px;">
+            <iframe 
+              src="https://www.instagram.com/p/Dd9FdTIBp3e/embed/" 
+              class="w-full min-h-[480px] border-0" 
+              frameborder="0" 
+              scrolling="no" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+            ></iframe>
+          </div>
+          <div class="p-3.5 bg-maroon-900 text-center border-t border-gold-500/30">
+            <a href="https://www.instagram.com/p/Dd9FdTIBp3e/" target="_blank" class="text-xs font-semibold text-gold-300 hover:text-gold-200 inline-flex items-center gap-1.5 transition-colors font-royal">
+              <span>View Post on Instagram</span>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="bg-white rounded-2xl border border-gold-500/30 shadow-royal overflow-hidden flex flex-col">
+          <div class="w-full bg-gray-50 flex items-center justify-center" style="min-height: 480px;">
+            <iframe 
+              src="https://www.instagram.com/p/DdrCHSzBtXf/embed/" 
+              class="w-full min-h-[480px] border-0" 
+              frameborder="0" 
+              scrolling="no" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+            ></iframe>
+          </div>
+          <div class="p-3.5 bg-maroon-900 text-center border-t border-gold-500/30">
+            <a href="https://www.instagram.com/p/DdrCHSzBtXf/" target="_blank" class="text-xs font-semibold text-gold-300 hover:text-gold-200 inline-flex items-center gap-1.5 transition-colors font-royal">
+              <span>View Post on Instagram</span>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Video 3 -->
+        <div class="bg-white rounded-2xl border border-gold-500/30 shadow-royal overflow-hidden flex flex-col">
+          <div class="w-full bg-gray-50 flex items-center justify-center" style="min-height: 480px;">
+            <iframe 
+              src="https://www.instagram.com/p/DckRE3hzT2o/embed/" 
+              class="w-full min-h-[480px] border-0" 
+              frameborder="0" 
+              scrolling="no" 
+              allowtransparency="true" 
+              allow="encrypted-media"
+            ></iframe>
+          </div>
+          <div class="p-3.5 bg-maroon-900 text-center border-t border-gold-500/30">
+            <a href="https://www.instagram.com/p/DckRE3hzT2o/" target="_blank" class="text-xs font-semibold text-gold-300 hover:text-gold-200 inline-flex items-center gap-1.5 transition-colors font-royal">
+              <span>View Post on Instagram</span>
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Second Vote CTA Bar -->
+    <div class="mt-16 bg-maroon-800 rounded-2xl p-8 sm:p-10 border border-gold-500/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-royal text-center md:text-left">
+      <div>
+        <h4 class="text-2xl font-royal font-bold text-white mb-2">Every Single Vote Tells A Heritage Story</h4>
+        <p class="text-gold-200/90 text-sm">Join thousands of saree connoisseurs who have pledged their vote for Doriawala Mujayyan.</p>
+      </div>
+      <button onclick="openVoteModal()" class="shimmer-btn text-maroon-900 font-royal font-bold px-8 py-3.5 rounded-full shadow-gold-glow hover:shadow-gold-glow-lg transition-all transform hover:scale-105 whitespace-nowrap cursor-pointer">
+        Vote For Doriawala Mujayyan ➔
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-maroon-900 text-gold-200/70 border-t border-gold-500/30 py-8 text-center text-xs font-sans">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="font-royal text-gold-400 font-semibold tracking-wider">
+        DORIAWALA MUJAYYAN © <span id="year">2026</span>
+      </div>
+      <div>Preserving the Royal Zari Kota Saree Heritage</div>
+      <div class="text-gray-400">Secure Voting Powered by Google Sheets</div>
+    </div>
+  </footer>
+
+  <!-- ================= VOTE POPUP MODAL (2-SECTION DESIGN) ================= -->
+  <div id="voteModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm transition-opacity duration-300">
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border-2 border-gold-400 transform transition-all duration-300 scale-95 opacity-0" id="modalBox">
+      
+      <!-- ================= SECTION 1: LOGO & HANDLE ================= -->
+      <div class="bg-maroon-900 text-white p-6 pb-5 relative text-center border-b border-gold-500/30">
+        <button onclick="closeVoteModal()" class="absolute top-4 right-4 text-gold-300 hover:text-white transition-colors w-8 h-8 rounded-full flex items-center justify-center bg-maroon-800/80 hover:bg-maroon-700">
+          ✕
+        </button>
+
+        <!-- Official Brand Logo -->
+        <div class="relative w-16 h-16 mx-auto mb-2">
+          <div class="w-16 h-16 rounded-full border-2 border-gold-400 p-0.5 flex items-center justify-center bg-black overflow-hidden shadow-gold-glow">
+            <img src="logo.jpg" alt="Doriawala Logo" class="w-full h-full object-cover rounded-full">
+          </div>
+          <span class="absolute bottom-0 right-0 bg-blue-500 text-white w-5 h-5 rounded-full flex items-center justify-center border-2 border-maroon-900 text-[10px] font-bold shadow" title="Verified">
+            ✓
+          </span>
+        </div>
+
+        <!-- Brand Title & Handle -->
+        <h3 class="font-royal text-xl font-bold text-gold-gradient tracking-wide">Doriawala Mujayyan</h3>
+        <div class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-maroon-800/90 border border-gold-500/30 text-gold-300 text-xs font-sans mt-1">
+          <span class="font-semibold">@doriawala_mujayyan</span>
+        </div>
+      </div>
+
+      <!-- ================= SECTION 2: VOTING LOGO & FORM ================= -->
+      <form id="votingForm" onsubmit="handleVoteSubmit(event)" class="p-6 sm:p-7 space-y-4 bg-white">
+        
+        <!-- 2nd Logo (Centered, Clean Image without Ring) with Single Text Below -->
+        <div class="flex flex-col items-center justify-center text-center pb-3 border-b border-gold-500/20">
+          <img 
+            src="logo2.jpg" 
+            alt="Voting Logo" 
+            class="h-14 sm:h-16 w-auto object-contain mx-auto mb-2" 
+            id="secondLogoImg"
+          >
+          <!-- Single Text Below Logo -->
+          <p class="text-xs uppercase font-royal font-bold text-maroon-900 tracking-wider">
+            Cast Your Vote
+          </p>
+        </div>
+
+        <!-- Name Input -->
+        <div>
+          <label for="voterName" class="block text-xs uppercase font-royal font-bold text-maroon-900 tracking-wider mb-1.5">
+            Full Name <span class="text-red-500">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="voterName" 
+            name="voterName" 
+            required 
+            placeholder="Enter Full Name"
+            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
+          >
+        </div>
+
+        <!-- Vote For Input (Empty / Not pre-filled) -->
+        <div>
+          <label for="voteFor" class="block text-xs uppercase font-royal font-bold text-maroon-900 tracking-wider mb-1.5">
+            Vote For
+          </label>
+          <input 
+            type="text" 
+            id="voteFor" 
+            name="voteFor" 
+            placeholder="Enter Candidate / Doriawala Mujayyan"
+            class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
+          >
+        </div>
+
+        <!-- Notification Message -->
+        <div id="formMessage" class="hidden p-2.5 rounded-lg text-xs font-sans leading-relaxed text-center"></div>
+
+        <!-- Submit Vote Button (#0064E0) -->
+        <div class="pt-1">
+          <button 
+            type="submit" 
+            id="submitBtn" 
+            class="w-full text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 transform active:scale-95 flex items-center justify-center gap-2 text-base cursor-pointer hover:brightness-105"
+            style="background-color: #0064E0;"
+          >
+            <span id="btnText" class="flex items-center gap-2">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Submit Vote
+            </span>
+            <span id="btnSpinner" class="hidden items-center gap-2">
+              <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Recording Vote...
+            </span>
+          </button>
+        </div>
+
+        <p class="text-[11px] text-center text-gray-500">
+          🔒 Your vote is securely logged to the official ledger.
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ================= CONFIGURATION =================
+    // Connected directly to your active Google Apps Script Web App
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPuu8wXiXmn5ZVwbDbz5_aRREfoysAtNrfi0XDwZEG1aXvzbDmki1gucV72SZlhmUqGw/exec";
+
+    // Modal Controls
+    const voteModal = document.getElementById('voteModal');
+    const modalBox = document.getElementById('modalBox');
+
+    function openVoteModal() {
+      voteModal.classList.remove('hidden');
+      setTimeout(() => {
+        modalBox.classList.remove('scale-95', 'opacity-0');
+        modalBox.classList.add('scale-100', 'opacity-100');
+        document.getElementById('voterName').focus();
+      }, 20);
+    }
+
+    function closeVoteModal() {
+      modalBox.classList.remove('scale-100', 'opacity-100');
+      modalBox.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        voteModal.classList.add('hidden');
+      }, 200);
+    }
+
+    voteModal.addEventListener('click', (e) => {
+      if (e.target === voteModal) {
+        closeVoteModal();
+      }
+    });
+
+    // Form Submission & Google Sheets Integration
+    async function handleVoteSubmit(event) {
+      event.preventDefault();
+
+      const voterNameInput = document.getElementById('voterName');
+      const voteForInput = document.getElementById('voteFor');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const formMessage = document.getElementById('formMessage');
+
+      const name = voterNameInput.value.trim();
+      const voteFor = voteForInput.value.trim() || "Doriawala Mujayyan";
+
+      if (!name) {
+        showMessage('Please enter your full name.', 'error');
+        return;
+      }
+
+      // Start Loading state
+      submitBtn.disabled = true;
+      btnText.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+      btnSpinner.classList.add('flex');
+      formMessage.classList.add('hidden');
+
+      const formData = new URLSearchParams();
+      formData.append('name', name);
+      formData.append('voteFor', voteFor);
+
+      try {
+        // Send to Google Apps Script Web App
+        await fetch(GOOGLE_APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData
+        });
+
+        // Confetti celebration
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 }
+          });
+        }
+
+        sessionStorage.setItem('lastVoterName', name);
+        sessionStorage.setItem('lastVoteFor', voteFor);
+
+        // Redirect to Thank You page
+        setTimeout(() => {
+          window.location.href = `thank-you.html?name=${encodeURIComponent(name)}&voteFor=${encodeURIComponent(voteFor)}`;
+        }, 500);
+
+      } catch (err) {
+        console.error("Submission error:", err);
+        showMessage('Could not record vote. Please check your network and try again.', 'error');
+        submitBtn.disabled = false;
+        btnText.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+        btnSpinner.classList.remove('flex');
+      }
+    }
+
+    function showMessage(msg, type) {
+      const formMessage = document.getElementById('formMessage');
+      formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700', 'bg-green-100', 'text-green-700');
+      if (type === 'error') {
+        formMessage.classList.add('bg-red-100', 'text-red-700');
+      } else {
+        formMessage.classList.add('bg-green-100', 'text-green-700');
+      }
+      formMessage.textContent = msg;
+    }
+  </script>
+  <!-- Instagram Embed Script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>
