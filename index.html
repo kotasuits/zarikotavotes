@@ -257,17 +257,17 @@
       <!-- ================= SECTION 2: VOTING LOGO & FORM ================= -->
       <form id="votingForm" onsubmit="handleVoteSubmit(event)" class="p-6 sm:p-7 space-y-4 bg-ivory">
         
-        <!-- 2nd Logo / Image -->
-        <div class="flex items-center justify-center gap-3 pb-3 border-b border-gold-500/20">
-          <div class="w-11 h-11 rounded-full border-2 border-gold-400 p-0.5 flex items-center justify-center bg-black overflow-hidden shadow-sm flex-shrink-0">
-            <!-- 2nd Logo Image (Currently using logo.jpg — replace with logo-2.jpg anytime) -->
-            <img src="logo.jpg" alt="Voting Logo" class="w-full h-full object-cover rounded-full" id="secondLogoImg">
-          </div>
-          <div class="text-left">
-            <span class="block text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider">Cast Your Vote</span>
-            <span class="block text-[11px] text-gray-500">Official Heritage Saree Poll</span>
-          </div>
-        </div>
+        <!-- 2nd Logo (Centered) with Single Text Below -->
+<div class="flex flex-col items-center justify-center text-center pb-3 border-b border-gold-500/20">
+  <div class="w-14 h-14 rounded-full border-2 border-gold-400 p-0.5 flex items-center justify-center bg-black overflow-hidden shadow-sm mb-2">
+    <!-- 2nd Logo Image (Currently logo.jpg - you can change the src anytime) -->
+    <img src="logo.jpg" alt="Voting Logo" class="w-full h-full object-cover rounded-full" id="secondLogoImg">
+  </div>
+  <!-- Single Text Below Logo -->
+  <p class="text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider">
+    Cast Your Vote
+  </p>
+</div>
 
         <!-- Name Input -->
         <div>
