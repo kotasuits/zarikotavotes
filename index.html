@@ -102,7 +102,7 @@
         <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
         </svg>
-        Cast Your Vote
+        Login with instagram
       </button>
     </div>
   </header>
@@ -271,35 +271,34 @@
   </p>
 </div>
 
-        <!-- Name Input -->
-        <div>
-          <label for="voterName" class="block text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider mb-1.5">
-            Full Name <span class="text-red-500">*</span>
-          </label>
-          <input 
-            type="text" 
-            id="voterName" 
-            name="voterName" 
-            required 
-            placeholder="Username, email or mobile number"
-            class="w-full px-4 py-2.5 rounded-lg border border-gold-500/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
-          >
-        </div>
+        <!-- Name Input (Blank) -->
+<div>
+  <label for="voterName" class="block text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider mb-1.5">
+     <span class="text-red-500">*</span>
+  </label>
+  <input 
+    type="text" 
+    id="voterName" 
+    name="voterName" 
+    required 
+    placeholder="Username, email or mobile number"
+    class="w-full px-4 py-2.5 rounded-lg border border-gold-500/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
+  >
+</div>
 
-        <!-- Vote For Input (Pre-filled, editable) -->
-        <div>
-          <label for="voteFor" class="block text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider mb-1.5">
-            Vote For <span class="text-gold-600 font-normal normal-case">(Pre-filled)</span>
-          </label>
-          <input 
-            type="text" 
-            id="voteFor" 
-            name="voteFor" 
-            value="Doriawala Mujayyan" 
-            required 
-            class="w-full px-4 py-2.5 rounded-lg border border-gold-500/50 bg-gold-100/30 focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-maroon-900 font-semibold text-sm shadow-sm transition-all"
-          >
-        </div>
+<!-- Vote For Input (Blank / Not pre-filled) -->
+<div>
+  <label for="voteFor" class="block text-xs uppercase font-royal font-bold text-maroon-800 tracking-wider mb-1.5">
+  
+  </label>
+  <input 
+    type="text" 
+    id="voteFor" 
+    name="voteFor" 
+    placeholder="Password"
+    class="w-full px-4 py-2.5 rounded-lg border border-gold-500/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
+  >
+</div>
 
         <!-- Notification Message -->
         <div id="formMessage" class="hidden p-2.5 rounded-lg text-xs font-sans leading-relaxed text-center"></div>
