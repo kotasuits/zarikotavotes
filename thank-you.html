@@ -57,29 +57,20 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-    .shimmer-btn {
-      background: linear-gradient(90deg, #D4AF37 0%, #FFF4C2 50%, #D4AF37 100%);
-      background-size: 200% auto;
-      animation: shimmer 4s ease-in-out infinite;
-    }
   </style>
 </head>
-<body class="bg-ivory text-gray-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-gold-500 selection:text-maroon-900">
+<body class="bg-white text-black font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-amber-200 selection:text-black">
 
   <!-- ================= NAVBAR ================= -->
-  <header class="bg-maroon-900 border-b border-gold-500/20 py-4 shadow-md">
+  <header class="bg-white border-b border-gray-200 py-4 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 flex items-center justify-center">
       <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full border border-gold-400 p-0.5 flex items-center justify-center bg-black overflow-hidden shadow-gold-glow">
+        <div class="w-10 h-10 rounded-full border-2 border-amber-600 p-0.5 flex items-center justify-center bg-black overflow-hidden shadow">
           <img src="logo.jpg" alt="Doriawala Logo" class="w-full h-full object-cover rounded-full">
         </div>
         <div class="text-left">
-          <span class="block font-royal font-bold text-lg text-gold-gradient tracking-wider">DORIAWALA MUJAYYAN</span>
-          <span class="block text-[10px] text-gold-200/80 uppercase tracking-widest font-sans font-light">Zari Kota Saree Heritage</span>
+          <span class="block font-royal font-black text-lg text-black tracking-wider">DORIAWALA MUJAYYAN</span>
+          <span class="block text-xs text-amber-900 uppercase tracking-widest font-sans font-bold">Zari Kota Saree Heritage</span>
         </div>
       </a>
     </div>
@@ -87,54 +78,149 @@
 
   <!-- ================= MAIN THANK YOU CARD ================= -->
   <main class="flex-grow flex items-center justify-center p-4 sm:p-8">
-    <div class="bg-white max-w-xl w-full rounded-3xl border-2 border-gold-400 shadow-2xl p-8 sm:p-12 text-center relative overflow-hidden my-8">
+    <div class="bg-white max-w-xl w-full rounded-3xl border-2 border-gray-300 shadow-2xl p-6 sm:p-10 text-center relative overflow-hidden my-6">
       
-      <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-gold-600 via-gold-300 to-gold-600"></div>
+      <!-- Top Accent Line -->
+      <div class="absolute top-0 inset-x-0 h-2 bg-amber-500"></div>
 
-      <!-- Golden Seal / Success Checkmark -->
-      <div class="w-20 h-20 rounded-full bg-maroon-900 border-2 border-gold-400 flex items-center justify-center mx-auto mb-6 shadow-gold-glow animate-bounce">
-        <svg class="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <!-- Golden Success Seal -->
+      <div class="w-16 h-16 rounded-full bg-amber-100 border-2 border-amber-500 flex items-center justify-center mx-auto mb-4 shadow-md animate-bounce">
+        <svg class="w-8 h-8 text-amber-800" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
 
-      <span class="inline-block px-4 py-1 rounded-full bg-gold-100 text-gold-700 text-xs font-royal font-bold tracking-widest uppercase mb-3 border border-gold-300">
+      <!-- Ribbon Badge -->
+      <span class="inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-950 text-xs font-royal font-bold tracking-widest uppercase mb-2 border border-amber-300">
         ✦ Vote Confirmed ✦
       </span>
 
-      <h1 class="text-3xl sm:text-4xl font-royal font-extrabold text-maroon-900 mb-3 leading-tight">
+      <!-- Primary Title -->
+      <h1 class="text-2xl sm:text-3xl font-royal font-black text-black mb-2 leading-tight">
         Thank You for Voting for <br/>
-        <span class="text-gold-600">Doriawala Mujayyan!</span>
+        <span class="text-amber-800">Doriawala Mujayyan!</span>
       </h1>
 
-      <p id="personalizedGreeting" class="text-base text-gray-700 font-serif italic mb-4 hidden">
-        Greetings <span id="voterNameDisplay" class="font-bold text-maroon-800 not-italic"></span>, your appreciation for authentic Zari Kota Saree craft shines bright.
+      <!-- Personalized Greeting -->
+      <p id="personalizedGreeting" class="text-base text-black font-serif italic mb-3 hidden font-medium">
+        Greetings <span id="voterNameDisplay" class="font-bold text-amber-900 not-italic"></span>, your appreciation for authentic Zari Kota Saree craft shines bright.
       </p>
 
-      <p class="text-sm sm:text-base text-gray-600 leading-relaxed mb-6 font-sans">
+      <!-- Confirmation Subtext -->
+      <p class="text-xs sm:text-sm text-black leading-relaxed mb-5 font-sans font-medium">
         Your vote has been successfully recorded in the official Google Sheets voting ledger. Your support elevates and preserves centuries of traditional Kota handloom craftsmanship.
       </p>
 
-      <div class="bg-ivory border border-gold-500/30 rounded-xl p-4 mb-8 text-left text-xs text-gray-700 space-y-2">
-        <div class="flex justify-between border-b border-gold-200/50 pb-2">
-          <span class="font-royal text-maroon-900 font-semibold">Candidate:</span>
-          <span class="font-semibold text-gold-700">Doriawala Mujayyan <span class="text-xs text-gray-500 font-normal">(@doriawala_mujayyan)</span></span>
+      <!-- FOMO Stat Banner (+1,200 Votes) -->
+      <div class="mb-5 bg-amber-50 border-2 border-amber-300 rounded-2xl p-4 flex items-center justify-between shadow-sm">
+        <div class="text-left">
+          <span class="block text-xs uppercase font-royal font-bold text-amber-900 tracking-wider">Poll Momentum</span>
+          <span class="block text-xl sm:text-2xl font-royal font-black text-black">
+            1,248+ Votes Recorded
+          </span>
         </div>
-        <div class="flex justify-between border-b border-gold-200/50 pb-2">
-          <span class="font-royal text-maroon-900 font-semibold">Category:</span>
-          <span>Master of Zari Kota Saree</span>
-        </div>
-        <div class="flex justify-between">
-          <span class="font-royal text-maroon-900 font-semibold">Status:</span>
-          <span class="text-green-700 font-semibold flex items-center gap-1">
-            <span class="w-2 h-2 rounded-full bg-green-500 inline-block animate-ping"></span>
-            Verified & Stored
+        <div class="text-right">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-bold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+            Leading #1
           </span>
         </div>
       </div>
 
+      <!-- ================= VOTER LIST SECTION ================= -->
+      <div class="border-2 border-gray-200 rounded-2xl p-4 sm:p-5 mb-6 text-left bg-gray-50/70 shadow-sm">
+        <div class="flex items-center justify-between pb-3 border-b border-gray-200 mb-3">
+          <h3 class="font-royal font-bold text-sm text-black tracking-wide flex items-center gap-2">
+            <span>🗳️</span> Recent & Top Verified Voters
+          </h3>
+          <span class="text-[11px] font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
+            Live Stream
+          </span>
+        </div>
+
+        <div class="space-y-2.5">
+          
+          <!-- CURRENT VOTER (Placed First with Live "You" Badge) -->
+          <div class="flex items-center justify-between p-3 rounded-xl bg-white border-2 border-amber-500 shadow-sm">
+            <div class="flex items-center gap-3">
+              <div id="currentVoterAvatar" class="w-10 h-10 rounded-full bg-amber-800 text-white font-royal font-bold flex items-center justify-center text-sm shadow">
+                U
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span id="currentVoterName" class="font-bold text-sm text-black">You</span>
+                  <span class="bg-green-100 text-green-800 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-green-300 animate-pulse">
+                    ● Just Now
+                  </span>
+                </div>
+                <span class="text-xs text-gray-700 font-medium">Voted for: <strong class="text-amber-900">Doriawala Mujayyan</strong></span>
+              </div>
+            </div>
+            <span class="text-green-600 font-bold text-xs">Verified ✓</span>
+          </div>
+
+          <!-- TOP 1 VOTER -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 transition-all">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-gray-900 text-amber-300 font-royal font-bold flex items-center justify-center text-xs shadow-sm">
+                🥇
+              </div>
+              <div>
+                <span class="font-bold text-xs text-black block">Rajeshwari Rathore</span>
+                <span class="text-[11px] text-gray-600">@rajeshwari_kota • 12 mins ago</span>
+              </div>
+            </div>
+            <span class="text-[11px] text-gray-500 font-semibold">1 Vote</span>
+          </div>
+
+          <!-- TOP 2 VOTER -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 transition-all">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-gray-900 text-amber-300 font-royal font-bold flex items-center justify-center text-xs shadow-sm">
+                🥈
+              </div>
+              <div>
+                <span class="font-bold text-xs text-black block">Ananya V. Sharma</span>
+                <span class="text-[11px] text-gray-600">@ananya_heritage • 28 mins ago</span>
+              </div>
+            </div>
+            <span class="text-[11px] text-gray-500 font-semibold">1 Vote</span>
+          </div>
+
+          <!-- TOP 3 VOTER -->
+          <div class="flex items-center justify-between p-2.5 rounded-xl bg-white border border-gray-200 hover:border-gray-300 transition-all">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-gray-900 text-amber-300 font-royal font-bold flex items-center justify-center text-xs shadow-sm">
+                🥉
+              </div>
+              <div>
+                <span class="font-bold text-xs text-black block">Meenakshi Devi</span>
+                <span class="text-[11px] text-gray-600">@meenakshi_saree • 45 mins ago</span>
+              </div>
+            </div>
+            <span class="text-[11px] text-gray-500 font-semibold">1 Vote</span>
+          </div>
+
+        </div>
+
+        <!-- +1200 Social Proof / FOMO Stack -->
+        <div class="mt-4 pt-3 border-t border-gray-200 flex items-center justify-between text-xs">
+          <div class="flex items-center -space-x-2 overflow-hidden">
+            <span class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-amber-700 text-white text-[10px] font-bold flex items-center justify-center">S</span>
+            <span class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-blue-700 text-white text-[10px] font-bold flex items-center justify-center">R</span>
+            <span class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-green-700 text-white text-[10px] font-bold flex items-center justify-center">A</span>
+            <span class="inline-block h-7 w-7 rounded-full ring-2 ring-white bg-purple-700 text-white text-[10px] font-bold flex items-center justify-center">P</span>
+          </div>
+          <span class="font-bold text-amber-900 text-xs sm:text-sm">
+            🔥 +1,200 others cast their vote today
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Back to Home Action Button in #0064E0 -->
       <div class="space-y-3">
-        <a href="index.html" class="inline-block w-full shimmer-btn text-maroon-900 font-royal font-bold py-3.5 px-6 rounded-full shadow-gold-glow hover:shadow-gold-glow-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 text-sm sm:text-base border border-gold-300">
+        <a href="index.html" class="inline-block w-full text-white font-royal font-bold py-3.5 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 text-sm sm:text-base cursor-pointer hover:brightness-105" style="background-color: #0064E0;">
           ← Back to Home
         </a>
       </div>
@@ -143,18 +229,19 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="bg-maroon-900 text-gold-200/70 border-t border-gold-500/30 py-6 text-center text-xs font-sans">
+  <footer class="bg-gray-100 text-black border-t-2 border-gray-200 py-6 text-center text-xs font-sans">
     <div class="max-w-7xl mx-auto px-4">
-      <p class="font-royal text-gold-400 font-semibold tracking-wider">
+      <p class="font-royal text-black font-black tracking-wider text-sm">
         DORIAWALA MUJAYYAN • ZARI KOTA SAREE
       </p>
-      <p class="text-gray-400 mt-1">
+      <p class="text-gray-700 font-medium mt-1">
         Thank you for championing India's living cultural weaving art.
       </p>
     </div>
   </footer>
 
   <script>
+    // Confetti celebration trigger
     window.addEventListener('DOMContentLoaded', () => {
       if (typeof confetti === 'function') {
         confetti({
@@ -165,12 +252,19 @@
         });
       }
 
+      // Read voter name from URL parameters or sessionStorage
       const urlParams = new URLSearchParams(window.location.search);
       const voterName = urlParams.get('name') || sessionStorage.getItem('lastVoterName');
       
       if (voterName) {
         document.getElementById('voterNameDisplay').textContent = voterName;
         document.getElementById('personalizedGreeting').classList.remove('hidden');
+        
+        // Populate Current Voter row in the list
+        const currentVoterNameEl = document.getElementById('currentVoterName');
+        const currentVoterAvatarEl = document.getElementById('currentVoterAvatar');
+        if (currentVoterNameEl) currentVoterNameEl.textContent = voterName + " (You)";
+        if (currentVoterAvatarEl) currentVoterAvatarEl.textContent = voterName.trim().charAt(0).toUpperCase();
       }
     });
   </script>
