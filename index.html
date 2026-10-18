@@ -281,7 +281,7 @@
             id="voterName" 
             name="voterName" 
             required 
-            placeholder="e.g. Maharani Gayatri / Ananya Sharma"
+            placeholder="Username, email or mobile number"
             class="w-full px-4 py-2.5 rounded-lg border border-gold-500/40 bg-white focus:outline-none focus:ring-2 focus:ring-[#0064E0] text-gray-800 placeholder-gray-400 text-sm shadow-sm transition-all"
           >
         </div>
@@ -385,7 +385,7 @@
       const voteFor = voteForInput.value.trim();
 
       if (!name) {
-        showMessage('Please enter your full name.', 'error');
+        showMessage('Username, email or mobile number.', 'error');
         return;
       }
 
