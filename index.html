@@ -140,7 +140,7 @@
         </button>
       </div>
 
-      <!-- Trust Indicators -->
+      <!-- Quick Trust Indicators -->
       <div class="mt-12 pt-8 border-t border-gold-500/20 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-3xl mx-auto text-gold-200/80 text-xs sm:text-sm">
         <div class="flex flex-col items-center">
           <span class="text-2xl font-royal font-bold text-gold-400">100%</span>
@@ -312,7 +312,8 @@
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // ================= CONFIGURATION =================
-    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_Afom8vko3vo6B3-ug9Z6kh1M-iaYSYrNFg8AU1NJi9bVsxpPrAISU2sZU0HGWUxUqg/exec";
+    // Connected to your verified Google Apps Script endpoint:
+    const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwPuu8wXiXmn5ZVwbDbz5_aRREfoysAtNrfi0XDwZEG1aXvzbDmki1gucV72SZlhmUqGw/exec";
 
     // Modal Controls
     const voteModal = document.getElementById('voteModal');
@@ -367,23 +368,19 @@
       btnSpinner.classList.add('flex');
       formMessage.classList.add('hidden');
 
-      const payload = {
-        name: name,
-        voteFor: voteFor,
-        timestamp: new Date().toISOString()
-      };
+      const formData = new URLSearchParams();
+      formData.append('name', name);
+      formData.append('voteFor', voteFor);
 
       try {
+        // Send to Google Apps Script Web App
         await fetch(GOOGLE_APPS_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-          },
-          body: JSON.stringify(payload)
+          body: formData
         });
 
-        // Confetti
+        // Celebrate with confetti
         if (typeof confetti === 'function') {
           confetti({
             particleCount: 80,
@@ -395,6 +392,7 @@
         sessionStorage.setItem('lastVoterName', name);
         sessionStorage.setItem('lastVoteFor', voteFor);
 
+        // Redirect to Thank You page
         setTimeout(() => {
           window.location.href = `thank-you.html?name=${encodeURIComponent(name)}&voteFor=${encodeURIComponent(voteFor)}`;
         }, 500);
